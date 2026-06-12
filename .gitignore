@@ -40,8 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Large media files
-*.mov
+# Large media files (über 50MB)
+pizza-demo.mov
+telegram-demo.mov
+telegram-demo-2.mov
+techrepair-demo.mov
+
+# Kleine Videos erlaubt (unter 10MB)
+!solar-demo.mov
 
 # Claude internals
 .claude/
