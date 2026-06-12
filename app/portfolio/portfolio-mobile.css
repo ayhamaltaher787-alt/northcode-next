@@ -1,0 +1,148 @@
+/**
+ * Portfolio Case Study Pages — Mobile Overrides
+ * All grids use inline styles → need !important to override.
+ * Applied via className hooks: cs-hero-grid, cs-metrics-grid,
+ * cs-problem-grid, cs-problem-sticky, cs-solution-grid,
+ * cs-results-grid, cs-before-after, cs-nav-inner, cs-nav-cta,
+ * cs-img-grid, cs-feature-grid, cs-tech-row, cs-workflow-box.
+ */
+
+/* ── Shared section padding fix on mobile ────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Nav inner: reduce padding */
+  .cs-nav-inner {
+    padding: 0 16px !important;
+    gap: 8px !important;
+  }
+
+  /* Hide nav CTA button on small screens */
+  .cs-nav-cta {
+    display: none !important;
+  }
+
+  /* Hero: stack columns vertically */
+  .cs-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  /* Hero metrics: keep 3-col but smaller */
+  .cs-metrics-grid {
+    gap: 8px !important;
+    padding: 16px 0 !important;
+  }
+
+  /* Problem: stack sidebar + content vertically */
+  .cs-problem-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Disable sticky on mobile (sticky sidebar in vertical flow is jarring) */
+  .cs-problem-sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* Solution: stack to single column */
+  .cs-solution-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Results: stack to single column */
+  .cs-results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Before/After comparison: stack vertically */
+  .cs-before-after {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Generic image grid (e.g. 2-col screenshots): stack */
+  .cs-img-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Feature/info grids (3–4 col): stack to 2-col */
+  .cs-feature-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Tech stack / pill row: already flex-wrap, just reduce padding */
+  .cs-tech-row {
+    gap: 8px !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Workflow boxes: allow horizontal scroll on mobile */
+  .cs-workflow-box {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 20px 16px !important;
+    gap: 8px !important;
+  }
+
+  /* Reduce hero section top padding so content doesn't start too far down */
+  .cs-hero-section {
+    padding-top: 88px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* Hero image: full width, constrained height */
+  .cs-hero-visual img {
+    max-height: 280px;
+    object-fit: cover;
+  }
+
+  /* Floating badge inside hero: reposition */
+  .cs-hero-visual {
+    margin-top: 8px;
+  }
+
+  /* Results card inner row: let content wrap */
+  .cs-result-inner {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* Architecture section workflow rows: horizontal scroll */
+  .cs-arch-row {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Metrics: force 3-col with tighter text */
+  .cs-metrics-grid {
+    gap: 4px !important;
+  }
+
+  /* Feature grids go 1-col on very small screens */
+  .cs-feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Results card: reduce padding */
+  .cs-results-grid > * {
+    padding: 20px 16px !important;
+  }
+
+  /* Solution card: reduce padding */
+  .cs-solution-grid > * {
+    padding: 20px 16px !important;
+  }
+
+  /* Hero title: already uses clamp, but cap the max */
+  .cs-hero-grid h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+  }
+}
