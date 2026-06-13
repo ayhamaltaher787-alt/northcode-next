@@ -124,6 +124,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
    ════════════════════════════════════════════════════════════════════════════ */
 export function PillarTemplate({ data }: { data: PillarPageData }) {
   const [navScrolled, setNavScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const otherPages = pillarPages.filter(p => p.slug !== data.slug);
 
@@ -164,9 +165,11 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
           {/* Logo */}
           <Link href="/" aria-label="Northcode – Startseite" className="nc-logo-seo" style={{
             textDecoration: 'none', fontFamily: 'Syne, sans-serif',
-            fontSize: '1.35rem', fontWeight: 800, color: '#fff',
-            display: 'flex', alignItems: 'center', gap: 0,
+            fontSize: '1.1rem', fontWeight: 800, color: '#fff',
+            display: 'flex', alignItems: 'center', gap: 8,
           }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-icon.png" alt="Northcode Logo" width="32" height="32" style={{ objectFit: 'contain', display: 'block' }} />
             <span className="nc-logo-north">North</span><span className="nc-logo-code" style={{ color: '#7BAE9B' }}>code</span>
           </Link>
 
@@ -212,7 +215,44 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
           >
             Potenzial analysieren
           </a>
+
+          {/* Hamburger — mobile only */}
+          <button
+            className="nc-seo-hamburger"
+            aria-label={mobileOpen ? 'Menü schließen' : 'Menü öffnen'}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, display: 'none', flexDirection: 'column', gap: 5 }}
+          >
+            <span style={{ display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: '200ms', transform: mobileOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: '200ms', opacity: mobileOpen ? 0 : 1 }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: '200ms', transform: mobileOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+          </button>
         </div>
+
+        {/* Mobile dropdown */}
+        {mobileOpen && (
+          <div style={{ padding: '8px 24px 20px', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {[
+              { href: '/#leistungen', label: 'Leistungen' },
+              { href: '/#analyse',    label: 'Analyse'    },
+              { href: '/#portfolio',  label: 'Portfolio'  },
+              { href: '/#ueber-mich', label: 'Über mich'  },
+              { href: '/#kontakt',    label: 'Kontakt'    },
+            ].map(l => (
+              <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} style={{
+                padding: '13px 4px', fontSize: 15, fontWeight: 500,
+                color: 'rgba(255,255,255,0.8)', textDecoration: 'none',
+                borderBottom: '1px solid rgba(255,255,255,0.06)',
+              }}>{l.label}</Link>
+            ))}
+            <a href={ANALYSE_URL} onClick={() => setMobileOpen(false)} style={{
+              marginTop: 12, padding: '13px 24px', borderRadius: 100, textAlign: 'center',
+              background: 'linear-gradient(135deg, #3D8B78 0%, #2F7A68 100%)',
+              color: '#fff', fontWeight: 700, textDecoration: 'none', fontSize: 14,
+              boxShadow: '0 4px 20px rgba(61,139,120,0.35)',
+            }}>Potenzial analysieren →</a>
+          </div>
+        )}
       </nav>
 
       <main style={{ background: '#0D1F35', position: 'relative' }}>
@@ -1017,6 +1057,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         }
         @media (max-width: 768px) {
           .nc-nav-links { display: none !important; }
+          .nc-seo-hamburger { display: flex !important; }
           .nc-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .nc-stats-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
           .nc-stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06) !important; }
