@@ -11,6 +11,8 @@ import {
   CheckCircle2, ArrowRight, Star, type LucideIcon,
 } from 'lucide-react';
 import { PillarPageData, pillarPages } from '@/lib/local-seo-data';
+import { CountUp } from '@/components/ui/count-up';
+import { AnimatedShaderBackground } from '@/components/ui/animated-shader-background';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
 const CALENDLY  = 'https://calendly.com/maxsel-100/30min?month=2026-06';
@@ -252,7 +254,8 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         )}
       </nav>
 
-      <main style={{ position: 'relative' }}>
+      <AnimatedShaderBackground />
+      <main style={{ position: 'relative', zIndex: 1 }}>
 
         {/* ════════════════════════════════════════════════════
             2 · HERO — dark navy, orbs, grid
@@ -260,7 +263,6 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         <section
           aria-labelledby="hero-heading"
           style={{
-            background: 'linear-gradient(160deg, #0D1F35 0%, #0A1928 50%, #061220 100%)',
             padding: '100px 24px 110px',
             position: 'relative', overflow: 'hidden',
           }}
@@ -286,15 +288,6 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
             position: 'absolute', top: '3%', right: '1%',
             width: 320, height: 320, borderRadius: '50%', pointerEvents: 'none',
             border: '1px solid rgba(61,139,120,0.06)',
-          }} />
-          {/* Subtle grid overlay */}
-          <div aria-hidden className="nc-hero-grid" style={{
-            position: 'absolute', inset: 0, pointerEvents: 'none',
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
           }} />
 
           <div style={{ maxWidth: 1160, margin: '0 auto', position: 'relative', zIndex: 1 }}>
@@ -412,7 +405,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         <section
           aria-label="Kennzahlen"
           style={{
-            background: 'rgba(255,255,255,0.03)',
+            background: 'rgba(13,31,53,0.92)',
             borderTop: '1px solid rgba(255,255,255,0.06)',
             borderBottom: '1px solid rgba(255,255,255,0.06)',
           }}
@@ -442,7 +435,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                     }}>
-                      {s.value}
+                      <CountUp value={s.value} />
                     </div>
                   </div>
                   <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', fontWeight: 500, lineHeight: 1.4 }}>
@@ -487,7 +480,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         {/* ════════════════════════════════════════════════════
             5 · SERVICES — dark section, glassmorphism 2×2 grid
             ════════════════════════════════════════════════════ */}
-        <section style={{ background: '#0D1F35', padding: '96px 24px' }} aria-labelledby="services-heading">
+        <section style={{ background: 'rgba(13,31,53,0.88)', padding: '96px 24px' }} aria-labelledby="services-heading">
           <div style={{ maxWidth: 1160, margin: '0 auto' }}>
             {/* Header */}
             <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 60px' }}>
@@ -520,7 +513,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         </section>
 
         {/* SVG wave divider */}
-        <div aria-hidden style={{ lineHeight: 0, background: '#0D1F35' }}>
+        <div aria-hidden style={{ lineHeight: 0, background: 'rgba(13,31,53,0.88)' }}>
           <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '100%' }}>
             <path d="M0 48 C360 0 1080 0 1440 48 L1440 0 L0 0 Z" fill="#F5FAFA" />
           </svg>
@@ -567,7 +560,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         {/* ════════════════════════════════════════════════════
             7 · PROCESS — dark, horizontal timeline (desktop)
             ════════════════════════════════════════════════════ */}
-        <section style={{ background: '#0D1F35', padding: '96px 24px' }} aria-labelledby="process-heading">
+        <section style={{ background: 'rgba(13,31,53,0.88)', padding: '96px 24px' }} aria-labelledby="process-heading">
           <div style={{ maxWidth: 1160, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 68px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 16 }}>
@@ -816,7 +809,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
             11 · RELATED PAGES — dark section, small card grid
             ════════════════════════════════════════════════════ */}
         {otherPages.length > 0 && (
-          <section style={{ background: '#0D1F35', padding: '80px 24px' }} aria-labelledby="related-heading">
+          <section style={{ background: 'rgba(13,31,53,0.88)', padding: '80px 24px' }} aria-labelledby="related-heading">
             <div style={{ maxWidth: 1160, margin: '0 auto' }}>
               <div style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 44px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 14 }}>
@@ -845,7 +838,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         )}
 
         {/* SVG wave divider */}
-        <div aria-hidden style={{ lineHeight: 0, background: '#0D1F35' }}>
+        <div aria-hidden style={{ lineHeight: 0, background: 'rgba(13,31,53,0.88)' }}>
           <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '100%' }}>
             <path d="M0 0 C360 48 1080 48 1440 0 L1440 48 L0 48 Z" fill="#2F7A68" />
           </svg>
@@ -1054,7 +1047,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         @media (max-width: 768px) {
           .nc-nav-links { display: none !important; }
           .nc-seo-hamburger { display: flex !important; }
-          .nc-seo-cta { display: none !important; }
+          .nc-seo-cta { padding: 6px 11px !important; font-size: 11px !important; box-shadow: none !important; }
           .nc-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .nc-stats-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
           .nc-stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06) !important; }

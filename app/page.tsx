@@ -7,6 +7,7 @@ import { Marquee } from "@/components/ui/marquee";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card-effect";
 import { CircleMenu } from "@/components/ui/circle-menu";
 import { Zap, Search, Briefcase, User, Mail } from "lucide-react";
+import { CountUp } from "@/components/ui/count-up";
 
 // ─── Analyse Types ────────────────────────────────────────────────────────────
 type AQType = "single" | "multi";
@@ -641,7 +642,7 @@ function Hero() {
             </div>
             <div className="nc-hero__trust">
               {[{ num: "5+", lbl: "Projekte abgeschlossen" }, { num: "100 %", lbl: "Kundenzufriedenheit" }, { num: "48h", lbl: "Ø Reaktionszeit" }].map((t) => (
-                <div key={t.num}><div className="nc-hero__trust-num">{t.num}</div><div className="nc-hero__trust-lbl">{t.lbl}</div></div>
+                <div key={t.num}><div className="nc-hero__trust-num"><CountUp value={t.num} /></div><div className="nc-hero__trust-lbl">{t.lbl}</div></div>
               ))}
             </div>
           </div>
@@ -657,7 +658,7 @@ function Hero() {
               </div>
               <div className="nc-hero__metrics">
                 {[{ val: "+127%", lbl: "Mehr Anfragen" }, { val: "−15h", lbl: "Manuelle Arbeit / Woche" }, { val: "0€", lbl: "Erstgespräch" }, { val: "24/7", lbl: "Systeme laufen durch" }].map((m) => (
-                  <div key={m.val} className="nc-hero__metric"><div className="nc-hero__metric-val">{m.val}</div><div className="nc-hero__metric-lbl">{m.lbl}</div></div>
+                  <div key={m.val} className="nc-hero__metric"><div className="nc-hero__metric-val"><CountUp value={m.val} /></div><div className="nc-hero__metric-lbl">{m.lbl}</div></div>
                 ))}
               </div>
               <div className="nc-hero__services">

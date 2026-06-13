@@ -7,6 +7,7 @@ import {
   Target, TrendingUp, Shield, Clock, Zap, Mail,
 } from 'lucide-react';
 import { ClusterPageData } from '@/lib/cluster-seo-data';
+import { AnimatedShaderBackground } from '@/components/ui/animated-shader-background';
 import { pillarPages } from '@/lib/local-seo-data';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
@@ -272,7 +273,8 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
     <>
       <JsonLd data={data} />
 
-      <div style={{ minHeight: '100dvh', position: 'relative' }}>
+      <AnimatedShaderBackground />
+      <div style={{ minHeight: '100dvh', position: 'relative', zIndex: 1 }}>
 
         {/* ════════════════════════════════════════════════════
             1 · NAV — dark glassmorphism, same as pillar
@@ -387,7 +389,6 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
             2 · HERO — dark, breadcrumb, intent badge
             ════════════════════════════════════════════════════ */}
         <header style={{
-          background: 'linear-gradient(160deg, #0D1F35 0%, #061220 100%)',
           padding: '72px 24px 80px',
           position: 'relative', overflow: 'hidden',
         }}>
@@ -521,7 +522,7 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
         {/* ════════════════════════════════════════════════════
             3 · MAIN CONTENT + SIDEBAR layout
             ════════════════════════════════════════════════════ */}
-        <main>
+        <main style={{ background: 'rgba(13,31,53,0.88)' }}>
           <div
             className="nc-cluster-layout"
             style={{
@@ -947,7 +948,7 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
         @media (max-width: 768px) {
           .nc-nav-links { display: none !important; }
           .nc-seo-hamburger { display: flex !important; }
-          .nc-seo-cta { display: none !important; }
+          .nc-seo-cta { padding: 6px 11px !important; font-size: 11px !important; box-shadow: none !important; }
           .nc-related-grid { grid-template-columns: 1fr !important; }
           .nc-cluster-footer { flex-direction: column !important; }
         }

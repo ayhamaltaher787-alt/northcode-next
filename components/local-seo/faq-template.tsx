@@ -7,6 +7,7 @@ import {
   Phone, Calendar, BookOpen,
 } from 'lucide-react';
 import { ClusterPageData } from '@/lib/cluster-seo-data';
+import { AnimatedShaderBackground } from '@/components/ui/animated-shader-background';
 import { pillarPages } from '@/lib/local-seo-data';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
@@ -116,6 +117,7 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
   return (
     <>
       <JsonLd data={data} />
+      <AnimatedShaderBackground />
       <ReadingProgress />
 
       <style>{`
@@ -200,14 +202,11 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
       <header style={{
-        background: 'linear-gradient(160deg, #07111D 0%, #0D1F35 55%, #102540 100%)',
-        paddingTop: 120, paddingBottom: 88, position: 'relative', overflow: 'hidden',
+        paddingTop: 120, paddingBottom: 88, position: 'relative', overflow: 'hidden', zIndex: 1,
       }}>
         {/* Decorative orbs */}
         <div style={{ position: 'absolute', top: -120, right: -120, width: 520, height: 520, borderRadius: '50%', background: 'radial-gradient(circle, rgba(61,139,120,0.1) 0%, transparent 65%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: -60, left: -60, width: 380, height: 380, borderRadius: '50%', background: 'radial-gradient(circle, rgba(26,74,110,0.18) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        {/* Grid overlay */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
 
         <div style={{ maxWidth: 820, margin: '0 auto', padding: '0 24px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           {/* Breadcrumb */}
@@ -260,7 +259,7 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
       </header>
 
       {/* ── ARTICLE ─────────────────────────────────────────────────────────── */}
-      <main style={{ background: '#F4F8F8' }}>
+      <main style={{ background: 'rgba(244,248,248,0.92)', position: 'relative', zIndex: 1 }}>
         <div style={{ maxWidth: 780, margin: '0 auto', padding: '72px 48px 88px' }} className="fn-article">
 
           {/* INTRO BLOCK */}
