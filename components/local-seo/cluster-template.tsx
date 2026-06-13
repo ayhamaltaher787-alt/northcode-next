@@ -284,9 +284,11 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
           aria-label="Hauptnavigation"
           style={{
             position: 'sticky', top: 0, zIndex: 50,
-            background: navScrolled ? 'rgba(13,31,53,0.97)' : 'rgba(13,31,53,0.85)',
+            background: 'rgba(245,250,250,0.92)',
             backdropFilter: 'blur(16px)',
-            borderBottom: navScrolled ? '1px solid rgba(61,139,120,0.2)' : '1px solid rgba(255,255,255,0.06)',
+            WebkitBackdropFilter: 'blur(16px)',
+            borderBottom: navScrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent',
+            boxShadow: navScrolled ? '0 1px 12px rgba(0,0,0,0.06)' : 'none',
             transition: '300ms cubic-bezier(.4,0,.2,1)',
           }}
         >
@@ -296,12 +298,12 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
           }}>
             <Link href="/" aria-label="Northcode – Startseite" className="nc-logo-seo" style={{
               textDecoration: 'none', fontFamily: 'Syne, sans-serif',
-              fontSize: '1.1rem', fontWeight: 800, color: '#fff',
-              display: 'flex', alignItems: 'center', gap: 8,
+              fontSize: '1rem', fontWeight: 800, color: '#1A4A6E',
+              display: 'flex', alignItems: 'center', gap: 6,
             }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-icon.png" alt="Northcode Logo" width="32" height="32" style={{ objectFit: 'contain', display: 'block' }} />
-              <span className="nc-logo-north">North</span><span className="nc-logo-code" style={{ color: '#7BAE9B' }}>code</span>
+              <img src="/logo-icon.png" alt="Northcode Logo" width="28" height="28" style={{ objectFit: 'contain', display: 'block' }} />
+              <span className="nc-logo-north">North</span><span className="nc-logo-code" style={{ color: '#3D8B78' }}>code</span>
             </Link>
 
             <div className="nc-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
@@ -313,11 +315,11 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
                 { href: '/#kontakt',    label: 'Kontakt'    },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{
-                  fontSize: 14, fontWeight: 500, color: 'rgba(255,255,255,0.7)',
+                  fontSize: 14, fontWeight: 500, color: '#4A6B8A',
                   textDecoration: 'none', transition: '180ms',
                 }}
-                  onMouseOver={e => (e.currentTarget.style.color = '#7BAE9B')}
-                  onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+                  onMouseOver={e => (e.currentTarget.style.color = '#3D8B78')}
+                  onMouseOut={e => (e.currentTarget.style.color = '#4A6B8A')}
                 >
                   {l.label}
                 </Link>
@@ -351,15 +353,15 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
               onClick={() => setMobileOpen(!mobileOpen)}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, display: 'none', flexDirection: 'column', gap: 5 }}
             >
-              <span style={{ display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: '200ms', transform: mobileOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
-              <span style={{ display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: '200ms', opacity: mobileOpen ? 0 : 1 }} />
-              <span style={{ display: 'block', width: 22, height: 2, background: '#fff', borderRadius: 2, transition: '200ms', transform: mobileOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+              <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2, transition: '200ms', transform: mobileOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+              <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2, transition: '200ms', opacity: mobileOpen ? 0 : 1 }} />
+              <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2, transition: '200ms', transform: mobileOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
             </button>
           </div>
 
           {/* Mobile dropdown */}
           {mobileOpen && (
-            <div style={{ padding: '8px 24px 20px', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <div style={{ padding: '8px 24px 20px', borderTop: '1px solid rgba(0,0,0,0.07)', background: 'rgba(245,250,250,0.98)', display: 'flex', flexDirection: 'column', gap: 2 }}>
               {[
                 { href: '/#leistungen', label: 'Leistungen' },
                 { href: '/#analyse',    label: 'Analyse'    },
@@ -369,8 +371,8 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
               ].map(l => (
                 <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} style={{
                   padding: '13px 4px', fontSize: 15, fontWeight: 500,
-                  color: 'rgba(255,255,255,0.8)', textDecoration: 'none',
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  color: '#1A4A6E', textDecoration: 'none',
+                  borderBottom: '1px solid rgba(0,0,0,0.06)',
                 }}>{l.label}</Link>
               ))}
               <a href={ANALYSE_URL} onClick={() => setMobileOpen(false)} style={{

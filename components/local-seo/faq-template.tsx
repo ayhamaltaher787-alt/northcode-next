@@ -137,20 +137,26 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
       {/* ── NAVBAR ──────────────────────────────────────────────────────────── */}
       <nav style={{
         position: 'fixed', top: 3, left: 0, right: 0, zIndex: 1000,
-        background: 'rgba(13,31,53,0.88)', backdropFilter: 'blur(18px)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        background: 'rgba(245,250,250,0.92)', backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(0,0,0,0.07)',
+        boxShadow: '0 1px 12px rgba(0,0,0,0.05)',
       }}>
         <div style={{
           maxWidth: 1200, margin: '0 auto', padding: '0 24px',
           height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
-          <Link href="/" style={{ textDecoration: 'none' }}>
-            <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: 20, color: '#fff', letterSpacing: '-0.5px' }}>
-              north<span style={{ color: '#3D8B78' }}>code</span>
-            </span>
+          <Link href="/" className="nc-logo-seo" style={{
+            textDecoration: 'none', fontFamily: 'Syne, sans-serif',
+            fontWeight: 800, fontSize: '1rem', color: '#1A4A6E',
+            display: 'flex', alignItems: 'center', gap: 6,
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-icon.png" alt="Northcode Logo" width="28" height="28" style={{ objectFit: 'contain', display: 'block' }} />
+            <span className="nc-logo-north">North</span><span className="nc-logo-code" style={{ color: '#3D8B78' }}>code</span>
           </Link>
           <div className="fn-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-            {NAV_LINKS.map(l => <a key={l.href} href={l.href} className="fn-link">{l.label}</a>)}
+            {NAV_LINKS.map(l => <a key={l.href} href={l.href} className="fn-link" style={{ color: '#4A6B8A' }}>{l.label}</a>)}
             <a href={CALENDLY} target="_blank" rel="noopener noreferrer" style={{
               background: '#3D8B78', color: '#fff', padding: '8px 20px',
               borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600,
@@ -161,9 +167,13 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
             aria-label="Menü"
             style={{
               display: 'none', background: 'none', border: 'none', cursor: 'pointer',
-              padding: 8, color: '#fff',
+              padding: 8, flexDirection: 'column', gap: 5,
             }}
-          >☰</button>
+          >
+            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2 }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2 }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2 }} />
+          </button>
         </div>
       </nav>
 
