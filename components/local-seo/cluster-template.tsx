@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { ClusterPageData } from '@/lib/cluster-seo-data';
 import { pillarPages } from '@/lib/local-seo-data';
+import { BackgroundPathsDark } from '@/components/ui/background-paths';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
 const CALENDLY    = 'https://calendly.com/maxsel-100/30min?month=2026-06';
@@ -271,7 +272,8 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
     <>
       <JsonLd data={data} />
 
-      <div style={{ background: '#0D1F35', minHeight: '100dvh' }}>
+      <div style={{ background: '#0D1F35', minHeight: '100dvh', position: 'relative' }}>
+        <BackgroundPathsDark />
 
         {/* ════════════════════════════════════════════════════
             1 · NAV — dark glassmorphism, same as pillar

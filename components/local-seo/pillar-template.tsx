@@ -11,6 +11,7 @@ import {
   CheckCircle2, ArrowRight, Star, type LucideIcon,
 } from 'lucide-react';
 import { PillarPageData, pillarPages } from '@/lib/local-seo-data';
+import { BackgroundPathsDark } from '@/components/ui/background-paths';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
 const CALENDLY  = 'https://calendly.com/maxsel-100/30min?month=2026-06';
@@ -214,7 +215,8 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         </div>
       </nav>
 
-      <main style={{ background: '#0D1F35' }}>
+      <main style={{ background: '#0D1F35', position: 'relative' }}>
+        <BackgroundPathsDark />
 
         {/* ════════════════════════════════════════════════════
             2 · HERO — dark navy, orbs, grid

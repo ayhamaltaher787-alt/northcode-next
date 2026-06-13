@@ -77,3 +77,25 @@ export function BackgroundPaths() {
         </div>
     );
 }
+
+/** Absolute-positioned dark variant for SEO pages with dark backgrounds */
+export function BackgroundPathsDark() {
+    return (
+        <div
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden"
+            style={{ color: "rgba(61,139,120,0.9)", zIndex: 0 }}
+        >
+            <div
+                className="absolute inset-0"
+                style={{
+                    background:
+                        "radial-gradient(ellipse 900px 600px at 80% 20%, rgba(61,139,120,0.06) 0%, transparent 65%), " +
+                        "radial-gradient(ellipse 600px 400px at 10% 80%, rgba(26,74,110,0.08) 0%, transparent 60%)",
+                }}
+            />
+            <FloatingPaths position={1} />
+            <FloatingPaths position={-1} />
+        </div>
+    );
+}
