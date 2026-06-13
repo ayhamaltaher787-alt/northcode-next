@@ -222,8 +222,9 @@
 #northcode-site .nc-badge.green { background: #ECFDF5; color: var(--nc-success); }
 
 /* Reveal animations */
-#northcode-site .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
-#northcode-site .reveal.visible { opacity: 1; transform: translateY(0); }
+#northcode-site .reveal { opacity: 1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
+#northcode-site .reveal.ready { opacity: 0; transform: translateY(24px); }
+#northcode-site .reveal.ready.visible { opacity: 1; transform: translateY(0); }
 #northcode-site .reveal-delay-1 { transition-delay: .1s; }
 #northcode-site .reveal-delay-2 { transition-delay: .2s; }
 #northcode-site .reveal-delay-3 { transition-delay: .3s; }
