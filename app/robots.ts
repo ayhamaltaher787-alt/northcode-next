@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://northcode.de/sitemap.xml',
-    host: 'https://northcode.de',
+    sitemap: 'https://northcode-esmail.de/sitemap.xml',
+    host: 'https://northcode-esmail.de',
   };
 }

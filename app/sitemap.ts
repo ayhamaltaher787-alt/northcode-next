@@ -16,7 +16,7 @@ import { ganderkeseeEduCostProofSlugs } from '@/lib/ganderkesee-cluster-edu-cost
 import { ganderkeseeMicroNicheSlugs } from '@/lib/ganderkesee-cluster-microniche';
 import { faqSlugs } from '@/lib/faq-pages';
 
-const BASE_URL = 'https://northcode.de';
+const BASE_URL = 'https://northcode-esmail.de';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
