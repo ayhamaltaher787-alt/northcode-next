@@ -291,11 +291,11 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
             maxWidth: 1200, margin: '0 auto', padding: '0 24px',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 68,
           }}>
-            <Link href="/" aria-label="Northcode – Startseite" style={{
+            <Link href="/" aria-label="Northcode – Startseite" className="nc-logo-seo" style={{
               textDecoration: 'none', fontFamily: 'Syne, sans-serif',
               fontSize: '1.35rem', fontWeight: 800, color: '#fff',
             }}>
-              North<span style={{ color: '#7BAE9B' }}>code</span>
+              <span className="nc-logo-north">North</span><span className="nc-logo-code" style={{ color: '#7BAE9B' }}>code</span>
             </Link>
 
             <div className="nc-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 36 }}>

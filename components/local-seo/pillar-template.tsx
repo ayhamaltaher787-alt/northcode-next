@@ -161,12 +161,12 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 68,
         }}>
           {/* Logo */}
-          <Link href="/" aria-label="Northcode – Startseite" style={{
+          <Link href="/" aria-label="Northcode – Startseite" className="nc-logo-seo" style={{
             textDecoration: 'none', fontFamily: 'Syne, sans-serif',
             fontSize: '1.35rem', fontWeight: 800, color: '#fff',
-            display: 'flex', alignItems: 'center', gap: 2,
+            display: 'flex', alignItems: 'center', gap: 0,
           }}>
-            North<span style={{ color: '#7BAE9B' }}>code</span>
+            <span className="nc-logo-north">North</span><span className="nc-logo-code" style={{ color: '#7BAE9B' }}>code</span>
           </Link>
 
           {/* Desktop nav links */}

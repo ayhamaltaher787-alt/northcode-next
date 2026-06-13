@@ -567,7 +567,7 @@ function Nav({ mobileOpen, setMobileOpen }: { mobileOpen: boolean; setMobileOpen
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo-icon.png" alt="Northcode Logo" width="36" height="36"
             style={{ objectFit: "contain", display: "block" }} />
-          North<span>code</span>
+          <span className="nc-logo-north">North</span><span className="nc-logo-code">code</span>
         </a>
         <ul className="nc-nav__links">
           {navLinks.map((l) => <li key={l.href}><a href={l.href}>{l.label}</a></li>)}
