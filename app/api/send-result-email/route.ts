@@ -239,7 +239,7 @@ export async function POST(req: NextRequest) {
       ? `${firstName}, hier ist Ihr Northcode Potenzialbericht`
       : 'Ihr persönlicher Northcode Potenzialbericht';
 
-    const fromAddress = process.env.RESEND_FROM ?? 'Northcode <onboarding@resend.dev>';
+    const fromAddress = process.env.RESEND_FROM ?? 'Northcode <noreply@northcode-esmail.de>';
 
     const publicDir = path.join(process.cwd(), 'public');
     const logoContent = fs.readFileSync(path.join(publicDir, 'logo-email.png'));
