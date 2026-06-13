@@ -11,7 +11,6 @@ import {
   CheckCircle2, ArrowRight, Star, type LucideIcon,
 } from 'lucide-react';
 import { PillarPageData, pillarPages } from '@/lib/local-seo-data';
-import { BackgroundPathsDark } from '@/components/ui/background-paths';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
 const CALENDLY  = 'https://calendly.com/maxsel-100/30min?month=2026-06';
@@ -192,8 +191,8 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
             ))}
           </div>
 
-          {/* CTA */}
-          <a href={ANALYSE_URL} style={{
+          {/* CTA — hidden on mobile, shown in dropdown */}
+          <a href={ANALYSE_URL} className="nc-seo-cta" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: 'linear-gradient(135deg, #3D8B78 0%, #2F7A68 100%)',
             color: '#fff', padding: '10px 22px', borderRadius: 100,
@@ -253,8 +252,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         )}
       </nav>
 
-      <main style={{ background: '#0D1F35', position: 'relative' }}>
-        <BackgroundPathsDark />
+      <main style={{ position: 'relative' }}>
 
         {/* ════════════════════════════════════════════════════
             2 · HERO — dark navy, orbs, grid
@@ -1056,6 +1054,7 @@ export function PillarTemplate({ data }: { data: PillarPageData }) {
         @media (max-width: 768px) {
           .nc-nav-links { display: none !important; }
           .nc-seo-hamburger { display: flex !important; }
+          .nc-seo-cta { display: none !important; }
           .nc-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .nc-stats-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
           .nc-stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06) !important; }

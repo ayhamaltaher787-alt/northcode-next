@@ -8,7 +8,6 @@ import {
 } from 'lucide-react';
 import { ClusterPageData } from '@/lib/cluster-seo-data';
 import { pillarPages } from '@/lib/local-seo-data';
-import { BackgroundPathsDark } from '@/components/ui/background-paths';
 
 /* ── Constants ───────────────────────────────────────────────────────────── */
 const CALENDLY    = 'https://calendly.com/maxsel-100/30min?month=2026-06';
@@ -273,8 +272,7 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
     <>
       <JsonLd data={data} />
 
-      <div style={{ background: '#0D1F35', minHeight: '100dvh', position: 'relative' }}>
-        <BackgroundPathsDark />
+      <div style={{ minHeight: '100dvh', position: 'relative' }}>
 
         {/* ════════════════════════════════════════════════════
             1 · NAV — dark glassmorphism, same as pillar
@@ -326,7 +324,7 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
               ))}
             </div>
 
-            <a href={ANALYSE_URL} style={{
+            <a href={ANALYSE_URL} className="nc-seo-cta" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: 'linear-gradient(135deg, #3D8B78 0%, #2F7A68 100%)',
               color: '#fff', padding: '10px 22px', borderRadius: 100,
@@ -949,6 +947,7 @@ export default function ClusterTemplate({ data }: { data: ClusterPageData }) {
         @media (max-width: 768px) {
           .nc-nav-links { display: none !important; }
           .nc-seo-hamburger { display: flex !important; }
+          .nc-seo-cta { display: none !important; }
           .nc-related-grid { grid-template-columns: 1fr !important; }
           .nc-cluster-footer { flex-direction: column !important; }
         }

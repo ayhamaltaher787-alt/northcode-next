@@ -127,6 +127,7 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
         .fn-related-link:hover { border-color: #3D8B78; background: rgba(61,139,120,0.04); }
         @media (max-width: 768px) {
           .fn-nav-links { display: none !important; }
+          .fn-seo-hamburger { display: flex !important; }
           .fn-article { padding: 0 20px !important; }
           .fn-hero-h1 { font-size: clamp(24px, 6vw, 36px) !important; }
           .fn-section-num { display: none !important; }
@@ -163,18 +164,38 @@ export default function FaqTemplate({ data }: { data: ClusterPageData }) {
             }}>Potenzial analysieren</a>
           </div>
           <button
+            className="fn-seo-hamburger"
             onClick={() => setMenuOpen(o => !o)}
-            aria-label="Menü"
+            aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
             style={{
               display: 'none', background: 'none', border: 'none', cursor: 'pointer',
               padding: 8, flexDirection: 'column', gap: 5,
             }}
           >
-            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2 }} />
-            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2 }} />
-            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2 }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2, transition: '200ms', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2, transition: '200ms', opacity: menuOpen ? 0 : 1 }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#1A4A6E', borderRadius: 2, transition: '200ms', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
           </button>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div style={{ padding: '8px 24px 20px', borderTop: '1px solid rgba(0,0,0,0.07)', background: 'rgba(245,250,250,0.98)', display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {NAV_LINKS.map(l => (
+              <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} style={{
+                padding: '13px 4px', fontSize: 15, fontWeight: 500,
+                color: '#1A4A6E', textDecoration: 'none',
+                borderBottom: '1px solid rgba(0,0,0,0.06)',
+              }}>{l.label}</a>
+            ))}
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} style={{
+              marginTop: 12, padding: '13px 24px', borderRadius: 100, textAlign: 'center',
+              background: 'linear-gradient(135deg, #3D8B78 0%, #2F7A68 100%)',
+              color: '#fff', fontWeight: 700, textDecoration: 'none', fontSize: 14,
+              boxShadow: '0 4px 20px rgba(61,139,120,0.35)',
+            }}>Potenzial analysieren →</a>
+          </div>
+        )}
       </nav>
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
