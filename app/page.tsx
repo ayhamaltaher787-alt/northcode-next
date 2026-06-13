@@ -535,12 +535,22 @@ function IcoPhone() {
 function useReveal() {
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
-    elements.forEach((el) => el.classList.add("ready"));
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } }),
       { threshold: 0.12 }
     );
-    elements.forEach((el) => obs.observe(el));
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inViewport) {
+        // Already visible — don't hide, no animation needed
+        el.classList.add("ready", "visible");
+      } else {
+        // Below fold — hide and animate on scroll
+        el.classList.add("ready");
+        obs.observe(el);
+      }
+    });
     return () => obs.disconnect();
   }, []);
 }
