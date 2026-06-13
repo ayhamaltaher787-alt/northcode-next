@@ -31,6 +31,30 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProfessionalService',
+            name: 'Northcode',
+            url: 'https://northcode-esmail.de',
+            logo: 'https://northcode-esmail.de/Logo.png',
+            image: 'https://northcode-esmail.de/Logo.png',
+            description: 'Professionelle Websites, Landingpages, KI-Chatbots und Business-Automatisierung für kleine und mittlere Unternehmen.',
+            email: 'northcodeesmail@gmail.com',
+            founder: { '@type': 'Person', name: 'Esmail Altaher' },
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Bürgerstraße 50',
+              postalCode: '26123',
+              addressLocality: 'Oldenburg',
+              addressCountry: 'DE',
+            },
+            areaServed: ['Bremen', 'Oldenburg', 'Delmenhorst', 'Ganderkesee'],
+            knowsAbout: ['Webdesign', 'KI-Automatisierung', 'Digitalisierung', 'Landingpages', 'Business-Systeme'],
+            sameAs: ['https://northcode-esmail.de'],
+          }) }}
+        />
       </head>
       <body className="min-h-full flex flex-col relative" style={{ background: "#F5FAFA" }}>
         {/* Fixed animated background — sits behind every page */}
