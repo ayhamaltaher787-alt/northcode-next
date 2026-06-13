@@ -202,7 +202,7 @@ function buildHtml(p: EmailPayload): string {
             <td style="font-size:12px;color:rgba(255,255,255,0.25);line-height:1.6;">
               <strong style="color:rgba(255,255,255,0.4);">Northcode</strong> · Esmail Altaher · northcodeesmail@gmail.com<br/>
               Diese Analyse wurde automatisch auf Basis Ihrer Angaben erstellt.<br/>
-              <span style="font-size:11px;">Sie erhalten diese E-Mail, weil Sie die Potenzialanalyse auf northcode.de ausgefüllt haben.</span>
+              <span style="font-size:11px;">Sie erhalten diese E-Mail, weil Sie die Potenzialanalyse auf northcode-esmail.de ausgefüllt haben.</span>
             </td>
           </tr>
         </table>
@@ -212,7 +212,7 @@ function buildHtml(p: EmailPayload): string {
   </table>
 </td></tr>
 <tr><td style="padding:24px;text-align:center;font-size:11px;color:rgba(255,255,255,0.15);">
-  © 2025 Northcode · <a href="https://northcode.de" style="color:rgba(61,139,120,0.5);text-decoration:none;">northcode.de</a>
+  © 2025 Northcode · <a href="https://northcode-esmail.de" style="color:rgba(61,139,120,0.5);text-decoration:none;">northcode-esmail.de</a>
 </td></tr>
 </table>
 

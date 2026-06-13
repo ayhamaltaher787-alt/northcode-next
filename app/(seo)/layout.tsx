@@ -10,7 +10,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://northcode.de'),
+  metadataBase: new URL('https://northcode-esmail.de'),
   openGraph: {
     type: 'website',
     locale: 'de_DE',

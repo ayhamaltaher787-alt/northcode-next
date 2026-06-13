@@ -192,7 +192,7 @@ export async function POST(req: NextRequest) {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type':  'application/json',
-        'HTTP-Referer':  'https://northcode.de',
+        'HTTP-Referer':  'https://northcode-esmail.de',
         'X-Title':       'Northcode Potenzialanalyse',
       },
       body: JSON.stringify({

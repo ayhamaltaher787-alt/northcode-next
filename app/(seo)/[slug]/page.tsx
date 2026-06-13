@@ -90,11 +90,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: data.metaTitle,
       description: data.metaDescription,
-      alternates: { canonical: `https://northcode.de/${data.slug}` },
+      alternates: { canonical: `https://northcode-esmail.de/${data.slug}` },
       openGraph: {
         title: data.metaTitle,
         description: data.metaDescription,
-        url: `https://northcode.de/${data.slug}`,
+        url: `https://northcode-esmail.de/${data.slug}`,
         siteName: 'Northcode',
         locale: 'de_DE',
         type: 'website',
@@ -106,11 +106,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.metaTitle,
     description: data.metaDescription,
-    alternates: { canonical: `https://northcode.de/${data.slug}` },
+    alternates: { canonical: `https://northcode-esmail.de/${data.slug}` },
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,
-      url: `https://northcode.de/${data.slug}`,
+      url: `https://northcode-esmail.de/${data.slug}`,
       siteName: 'Northcode',
       locale: 'de_DE',
       type: 'article',
